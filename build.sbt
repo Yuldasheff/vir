@@ -7,7 +7,6 @@ ThisBuild / useSuperShell := false
 lazy val data = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
   .in(file("data"))
-  .settings(sharedSettings)
 
 lazy val backend = project
   .in(file("backend"))
