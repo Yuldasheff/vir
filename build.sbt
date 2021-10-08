@@ -4,6 +4,11 @@ Global / onChangedBuildSource := ReloadOnSourceChanges
 ThisBuild / scalaVersion := "3.0.2"
 ThisBuild / useSuperShell := false
 
+lazy val data = crossProject(JSPlatform, JVMPlatform)
+  .crossType(CrossType.Pure)
+  .in(file("data"))
+  .settings(sharedSettings)
+
 lazy val backend = project
   .in(file("backend"))
   .settings(
@@ -18,7 +23,7 @@ lazy val backend = project
     )
   )
 
-lazy val root = (project in file("."))
+lazy val frontend = (project in file("frontend"))
   .settings(
     libraryDependencies += "org.scala-js" %% "scalajs-dom" % "1.0.0",
     scalaJSUseMainModuleInitializer := true
