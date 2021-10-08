@@ -17,3 +17,11 @@ lazy val backend = project
       "ch.qos.logback" % "logback-classic" % "1.2.6"
     )
   )
+
+lazy val root = (project in file("."))
+  .settings(
+    libraryDependencies += "org.scala-js" %% "scalajs-dom" % "1.0.0",
+    scalaJSUseMainModuleInitializer := true
+  ).enablePlugins(ScalaJSPlugin)
+
+
