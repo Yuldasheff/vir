@@ -26,7 +26,7 @@ lazy val backend = project
 lazy val frontend = (project in file("frontend"))
   .settings(
     libraryDependencies += "org.scala-js" %% "scalajs-dom" % "1.0.0",
-    scalaJSUseMainModuleInitializer := true
+    scalaJSUseMainModuleInitializer :=true
   ).enablePlugins(ScalaJSPlugin)
 
 
